@@ -1,11 +1,11 @@
 from datacenter.models import Passcard
 from datacenter.models import Visit
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 
 
 def passcard_info_view(request, passcode):
-    # passcard = Passcard.objects.all()[0]
-    passcard = Passcard.objects.get(passcode=passcode)
+    passcard = get_object_or_404(Passcard, passcode=passcode)
     visits = Visit.objects.filter(passcard=passcard)
 
     this_passcard_visits = []
