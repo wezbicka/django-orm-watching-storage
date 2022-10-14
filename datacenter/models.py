@@ -1,3 +1,6 @@
+import datetime
+
+from django.utils import timezone
 from django.db import models
 
 
@@ -28,3 +31,13 @@ class Visit(models.Model):
                 if self.leaved_at else 'not leaved'
             )
         )
+
+    def get_duration(self):
+
+        ''' Рассчитывает длительность визита. Она возвращает объект datetime.timedelta '''
+
+        now = datetime.datetime.now(timezone.utc)
+        now_moscow = timezone.localtime(now)
+        then = timezone.localtime(self.entered_at)
+        delta = now_moscow - then
+        return delta
