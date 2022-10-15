@@ -1,7 +1,5 @@
-from datacenter.models import Passcard
-from datacenter.models import Visit
-from django.shortcuts import render
-from django.shortcuts import get_object_or_404
+from datacenter.models import Passcard, Visit
+from django.shortcuts import render, get_object_or_404
 
 
 def passcard_info_view(request, passcode):

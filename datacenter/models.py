@@ -47,7 +47,7 @@ class Visit(models.Model):
         return delta
 
     def format_duration(self, time=None):
-        time=self.get_duration()
+        time = self.get_duration()
         parts_time = str(time).split('.')
         duration = parts_time[0].split(':')
         hours = duration[0]
