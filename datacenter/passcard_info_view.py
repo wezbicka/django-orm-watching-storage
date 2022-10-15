@@ -8,12 +8,12 @@ def passcard_info_view(request, passcode):
 
     this_passcard_visits = []
     for visit in visits:
-        about_visit = {
+        serialized_visit = {
             'entered_at': visit.entered_at,
             'duration': visit.format_duration(),
             'is_strange': visit.is_visit_long(),
         }
-        this_passcard_visits.append(about_visit)
+        this_passcard_visits.append(serialized_visit)
     context = {
         'passcard': passcard,
         'this_passcard_visits': this_passcard_visits
