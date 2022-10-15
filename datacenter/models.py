@@ -55,11 +55,11 @@ class Visit(models.Model):
         return f'{hours}ч {minutes}мин'
         
     def is_visit_long(self, minutes=60):
-        
+
         """Определяет, подозрителен визит или нет. 
         minutes - ограничение, сверх этого времени визит считать долгим"""
 
         duration = self.get_duration()
         minutes_inside = int(duration.seconds) // 60
-        is_strange = True if minutes_inside > minutes else False
+        is_strange = minutes_inside > minutes 
         return is_strange
