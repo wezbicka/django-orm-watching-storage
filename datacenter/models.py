@@ -46,12 +46,11 @@ class Visit(models.Model):
             delta = now_moscow - entry_time
         return delta
 
-    def format_duration(self, time=None):
-        time = self.get_duration()
-        parts_time = str(time).split('.')
-        duration = parts_time[0].split(':')
-        hours = duration[0]
-        minutes = duration[1]
+    def format_duration(self, duration=None):
+        duration = self.get_duration()
+        seconds = duration.total_seconds()
+        hours = int(seconds // 3600)
+        minutes = int((seconds % 3600) // 60)
         return f'{hours}ч {minutes}мин'
         
     def is_visit_long(self, minutes=60):
