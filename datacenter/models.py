@@ -60,6 +60,6 @@ class Visit(models.Model):
         minutes - ограничение, сверх этого времени визит считать долгим"""
 
         duration = self.get_duration()
-        minutes_inside = int(duration.seconds) // 60
+        minutes_inside = int(duration.total_seconds( )) // 60
         is_strange = minutes_inside > minutes 
         return is_strange
