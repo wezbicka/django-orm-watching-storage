@@ -10,13 +10,12 @@ pip install -r requirements.txt
 ```
 Программа берет настройки из нестандартных переменных окружения. Перед запуском программы создаём фаил .env, туда положите:
 ```
-DB_HOST=host
-DB_PORT=port
-DB_NAME=name
-DB_USER=user
-DB_PASSWORD=password
-DB_SECRET_KEY=key
-DB_DEBUG=False
+ENGINE=engine
+HOST=host
+PORT=port
+NAME=name
+USER=user
+PASSWORD=password
 ```
 Как запустить проект
 Запустите localhost командой из терминала.
