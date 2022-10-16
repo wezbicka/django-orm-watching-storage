@@ -34,21 +34,15 @@ class Visit(models.Model):
 
     def get_duration(self):
 
-        ''' Рассчитывает длительность визита. Она возвращает объект datetime.timedelta '''
+        ''' Рассчитывает длительность визита. Она возвращает количество секунд '''
 
         entry_time = timezone.localtime(self.entered_at)
-        if self.leaved_at:
-            exit_time = timezone.localtime(self.leaved_at)
-            delta = exit_time - entry_time
-        else:
-            now = datetime.datetime.now(timezone.utc)
-            now_moscow = timezone.localtime(now)
-            delta = now_moscow - entry_time
-        return delta
+        exit_time = timezone.localtime(self.leaved_at)
+        delta = exit_time - entry_time
+        return delta.total_seconds()
 
     def format_duration(self, duration=None):
-        duration = self.get_duration()
-        seconds = duration.total_seconds()
+        seconds = self.get_duration()
         hours = int(seconds // 3600)
         minutes = int((seconds % 3600) // 60)
         return f'{hours}ч {minutes}мин'
@@ -59,6 +53,6 @@ class Visit(models.Model):
         minutes - ограничение, сверх этого времени визит считать долгим"""
 
         duration = self.get_duration()
-        minutes_inside = int(duration.total_seconds( )) // 60
+        minutes_inside = int(duration // 60)
         is_strange = minutes_inside > minutes 
         return is_strange
