@@ -26,7 +26,7 @@ DEBUG=False
 Как запустить проект
 Запустите localhost командой из терминала.
 ```
-python main.py
+python manage.py runserver
 ```
 В браузере перейдите по адресу http://127.0.0.1:8000
 
