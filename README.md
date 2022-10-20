@@ -8,14 +8,20 @@ Python3 должен быть уже установлен. Затем испол
 ```
 pip install -r requirements.txt
 ```
+Также уже должен быть установлен
+```
+pip install environs
+``` 
 Программа берет настройки из нестандартных переменных окружения. Перед запуском программы создаём фаил .env, туда положите:
 ```
-ENGINE=engine
-HOST=host
-PORT=port
-NAME=name
-USER=user
-PASSWORD=password
+DB_ENGINE=engine
+DB_HOST=host
+DB_PORT=port
+DB_NAME=name
+DB_USER=user
+DB_PASSWORD=password
+SECRET_KEY=secret_key
+DEBUG=False
 ```
 Как запустить проект
 Запустите localhost командой из терминала.
