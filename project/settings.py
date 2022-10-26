@@ -5,7 +5,7 @@ env = Env()
 env.read_env()
 DATABASES = {
     'default': {
-        'ENGINE': env("DB_ENGINE"), #os.getenv(
+        'ENGINE': env("DB_ENGINE"),
         'HOST': env("DB_HOST"),
         'PORT': env("DB_PORT"),
         'NAME': env("DB_NAME"),
