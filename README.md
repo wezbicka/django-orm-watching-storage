@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 Программа берет настройки из нестандартных переменных окружения. Перед запуском программы создаём фаил .env, туда положите:
 ```
-DB_ENGINE=engine
+DB_ENGINE=django.db.backends.postgresql_psycopg2
 DB_HOST=host
 DB_PORT=port
 DB_NAME=name
