@@ -12,16 +12,11 @@ Python3 should be already installed. Then use pip (or pip3, if there is a confli
 ```
 pip install -r requirements.txt
 ```
-
-It should also already be installed
-
-```
-pip install environs
-``` 
+ 
 The program takes settings from non-standard environment variables. Before starting the program, create a file .env, put it there:
 
 ```
-DB_ENGINE=engine
+DB_ENGINE=django.db.backends.postgresql_psycopg2
 DB_HOST=host
 DB_PORT=port
 DB_NAME=name
@@ -40,4 +35,4 @@ python manage.py runserver
 In the browser, go to http://127.0.0.1:8000
 
 ## Project Goals
-The code is written for educational purposes on online-course for web-developers dvmn.org.
+The code is written for educational purposes on online-course for web-developers [dvmn.org](https://dvmn.org).
