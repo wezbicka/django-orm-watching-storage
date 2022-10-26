@@ -7,6 +7,14 @@ The security console is a website that is connected to a remote database, record
 
 ## How to install
 
+Install and activate virtual environment for project isolation.
+
+```
+python -m venv venv<br>
+source ./venv/Scripts/activate  #для Windows
+source ./venv/bin/activate      #для Linux и macOS
+```
+
 Python3 should be already installed. Then use pip (or pip3, if there is a conflict with Python2) to install dependencies:
 
 ```
@@ -16,15 +24,16 @@ pip install -r requirements.txt
 The program takes settings from non-standard environment variables. Before starting the program, create a file .env, put it there:
 
 ```
-DB_ENGINE=django.db.backends.postgresql_psycopg2
-DB_HOST=host
-DB_PORT=port
-DB_NAME=name
-DB_USER=user
-DB_PASSWORD=password
+DB_ENGINE=django.db.backends.<desired_engine>
+DB_HOST=<hostname or IP>
+DB_PORT=<port number>
+DB_NAME=<database name>
+DB_USER=<database user name>
+DB_PASSWORD=<database user password>
 SECRET_KEY=secret_key
-DEBUG=False
+DEBUG=<debugging mode True or False>
 ```
+
 
 How to launch a project
 Run localhost with a command from the terminal.
